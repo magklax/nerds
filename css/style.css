@@ -93,6 +93,15 @@ input[type="radio"].invisible,
 	padding: 49px 0 0;
 }
 
+.main-header-logo:hover,
+.main-header-logo:focus {
+	opacity: 0.8;
+}
+
+.main-header-logo:active {
+	opacity: 0.3;
+}
+
 .site-nav,
 .user-nav {
 	display: flex;
