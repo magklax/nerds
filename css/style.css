@@ -449,14 +449,20 @@ input[type="radio"].invisible,
 	flex-direction: column;
 	
 	width: 300px;
+	padding-right: 40px;
+	box-sizing: border-box;
 }
 
 .filter-item {
 	margin: 0;
-	margin-bottom: 55px;
+	margin-bottom: 45px;
 	padding: 0;
 
 	border: none;
+}
+
+.filter-item:first-child {
+	margin-bottom: 55px;
 }
 
 .filter legend {
@@ -469,8 +475,6 @@ input[type="radio"].invisible,
 /******************************Стоимость**********************************/
 
 .range-filter {
-	width: 260px;
-	
 	margin-top: 48px;
 }
 
@@ -561,24 +565,30 @@ input[type="radio"].invisible,
 	text-align: right;
 }
 
-/******************************Сетка**********************************/
+/******************************Сетка+Особенности**********************************/
 
 .filter-list {
 	margin: 0;
-	margin-top: 18px;
+	margin-top: 16px;
 	padding: 0;
 	
 	list-style: none;
+	line-height: 20px;
 }
 
 .filter-option {
 	position: relative;
 	
 	padding-left: 20px;
-	margin-bottom: 22px;
+	margin-bottom: 20px;
 }
 
-input[type="radio"] {
+.filter-option:last-child {
+	margin-bottom: 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
 	opacity: 0;
 }
 
@@ -597,23 +607,64 @@ input[type="radio"]+label::before {
 	opacity: 0.4;
 }
 
+input[type="checkbox"]+label::before {
+	content: "";
+
+	position: absolute;
+	width: 25px;
+	height: 25px;
+
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	
+	background-repeat: no-repeat;
+	opacity: 0.4;
+}
+
 input[type="radio"]:checked+label::before {
 	background-image: url("../img/radio-on.svg");
+}
+
+input[type="checkbox"]:checked+label::before {
+	background-image: url("../img/checkbox-on.svg");
 }
 
 input[type="radio"]:not(:checked)+label::before {
 	background-image: url("../img/radio-off.svg");
 }
 
+input[type="checkbox"]:not(:checked)+label::before {
+	background-image: url("../img/checkbox-off.svg");
+}
+
 input[type="radio"]:not(:disabled):hover+label::before,
-input[type="radio"]:not(:disabled):focus+label::before {
+input[type="radio"]:not(:disabled):focus+label::before,
+input[type="checkbox"]:not(:disabled):hover+label::before,
+input[type="checkbox"]:not(:disabled):focus+label::before {
 	opacity: 1;
 }
 
+input[type="radio"]:not(:disabled):hover+label,
+input[type="radio"]:not(:disabled):hover+label,
+input[type="checkbox"]:not(:disabled):hover+label,
+input[type="checkbox"]:not(:disabled):hover+label {
+	color: #000;
+	cursor: pointer;
+
+}
+
+input[type="radio"]:disabled+label,
+input[type="checkbox"]:disabled+label {
+	opacity: 0.3;
+}
 
 /******************************Кнопка**********************************/
 
 .filter-btn {
+	padding: 16px 0;
+	margin-top: 5px;
+	
 	color: #000;
 	
 	background-color: #eee;
@@ -632,7 +683,10 @@ input[type="radio"]:not(:disabled):focus+label::before {
 }
 /******************************Каталог-Сортировка********************************/
 .sorting {
+	display: flex;
+	
 	width: 800px;
+	box-sizing: border-box;
 }
 
 .sorting h2 {
@@ -645,6 +699,7 @@ input[type="radio"]:not(:disabled):focus+label::before {
 
 .sorting-list,
 .sorting-control {
+	display: flex;
 	list-style: none;
 }
 
@@ -811,13 +866,6 @@ input[type="radio"]:not(:disabled):focus+label::before {
 
 .social-btn:active svg path {
 	opacity: 0.3;
-}
-
-.btn:active {
-	color: rgba(255,255,255,0.3);
-	
-	background-color: #d7373b;
-	box-shadow: inset 0 3px 0 rgba(0,1,1,0.1);
 }
 
 .footer-promo {
