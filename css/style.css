@@ -437,6 +437,7 @@ input[type="radio"].invisible,
 
 .inner-page .main-wrapper {
 	display: flex;
+	justify-content: space-between;
 	flex-wrap: wrap;
 	
 	padding-top: 55px;
@@ -681,17 +682,32 @@ input[type="checkbox"]:disabled+label {
 	
 	background-color: #d5d5d5;
 }
-/******************************Каталог-Сортировка********************************/
-.sorting {
+/******************************Каталог********************************/
+.catalog-box {
 	display: flex;
+	flex-direction: column;
 	
 	width: 800px;
 	box-sizing: border-box;
+	padding-left: 40px;
 }
 
-.sorting h2 {
+.sorting {
+	display: flex;
+	justify-content: space-between;
+	
+	margin-bottom: 48px;
+	box-sizing: border-box;
+}
+
+.sorting h3 {
+	width: 360px;
+	
+	margin: 0;
+	margin-right: auto;
+	
 	font-size: 18px;
-	line-height: 18px;
+	line-height: 30px;
 	color: #000;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -700,36 +716,122 @@ input[type="checkbox"]:disabled+label {
 .sorting-list,
 .sorting-control {
 	display: flex;
+	justify-content: flex-start;
+		
+	margin: 0;
+	padding: 0;
+	
 	list-style: none;
 }
 
-.sorting-item a {
+.sorting-list {
+	width: 300px;
+}
+
+.sorting-control {
+	width: 60px;
+
+}
+
+.sorting-item {
+	margin-right: 25px;
+	
 	color: #000;
 	font-size: 14px;
 	text-transform: uppercase;
 	opacity: 0.3;
 }
 
-.sorting-item a:hover,
-.sorting-item a:focus {
+.sorting-item:hover,
+.sorting-item:focus {
 	opacity: 0.6;
 }
 
-.sorting-item a:active {
+.sorting-item:active {
 	opacity: 1;
 }
 
 /******************************Каталог-Каталог********************************/
 .catalog {
-	width: 800px;
-	margin-left: auto;
 }
 
 .catalog-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	
 	list-style: none;
 }
 
+.catalog-item {
+	display: flex;
+	flex-direction: column;
+	
+	margin-bottom: 33px;
+	
+	width: 360px;
+	height: 616px;
+}
+
+.item-details {
+	display: none;
+	margin-bottom: 0;
+	
+	transform: translateY(-100%);
+	
+	padding: 30px 70px;
+	
+	text-align: center;
+	
+	background-color: #eee;
+}
+
+.catalog-item:hover .item-details,
+.catalog-item:focus .item-details {
+	display: block;
+		
+}
+
+.item-details h3 {
+	margin: 0;
+	margin-bottom: 15px;
+	
+	font-size: 18px;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+
+.item-details p {
+	margin: 0;
+	margin-bottom: 31px;
+}
+
+
+.price-btn {
+	padding: 16px 62px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .pagination-list {
+	margin: 0;
+	padding: 0;
 	list-style: none;
 }
 
