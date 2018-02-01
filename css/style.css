@@ -67,7 +67,7 @@ input[type="radio"].invisible,
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-/***********************************Футер***********************************/
+/***********************************Футер**********************/
 
 .main-header {
 	margin: 0;
@@ -136,19 +136,17 @@ input[type="radio"].invisible,
 	text-transform: uppercase;
 }
 
-.site-nav a:hover,
+.site-nav a:not(.current):hover,
+.site-nav a:not(.current):focus,
 .user-nav a:hover,
-.site-nav a:focus,
 .user-nav a:focus {
 	color: #fb565a;
 }
 
-.site-nav a:active,
-.user-nav a:not(.cart-link::before):active {
-	color: #000;
-	opacity: 0.3;
+.site-nav a:not(.current):active,
+.user-nav a:active {
+	color: rgba(0, 0 ,0 ,0.3);
 }
-
 .site-nav .current {
 	border-bottom: 2px solid #fb565a;
 }
@@ -163,8 +161,10 @@ input[type="radio"].invisible,
 	
 	width: 15px;
 	height: 15px;
+	opacity: 1;
 }
-/********************************Слайдер - Преимущества************************/
+
+/****************************Слайдер - Преимущества*********************/
 .main-wrapper {
 	width: 1200px;
 	margin: 0 auto;
@@ -751,7 +751,29 @@ input[type="checkbox"]:disabled+label {
 	opacity: 1;
 }
 
-/******************************Каталог-Каталог********************************/
+.sort-down,
+.sort-up {
+	opacity: 0.2;
+	margin-left: 18px;
+}
+
+.sort-down svg {
+	transform: rotate(180deg);
+}
+
+.sort-down:hover,
+.sort-down:focus,
+.sort-up:hover,
+.sort-up:focus {
+	opacity: 1;
+}
+
+.sort-down:active path,
+.sort-up:active path {
+	fill: #231F20;
+}
+
+/****************************Каталог-Каталог*****************************/
 .catalog {
 }
 
@@ -773,6 +795,20 @@ input[type="checkbox"]:disabled+label {
 	
 	width: 360px;
 	height: 616px;
+	cursor: pointer;
+}
+
+.catalog-item:last-child,
+.catalog-item:nth-last-child(2) {
+	margin-bottom: 0;
+}
+
+.catalog-item img:first-child {
+	opacity: 0.12;
+}
+
+.catalog-item:hover img:first-child {
+	opacity: 1;
 }
 
 .item-details {
@@ -791,8 +827,7 @@ input[type="checkbox"]:disabled+label {
 .catalog-item:hover .item-details,
 .catalog-item:focus .item-details {
 	display: block;
-		
-}
+	}
 
 .item-details h3 {
 	margin: 0;
@@ -808,48 +843,48 @@ input[type="checkbox"]:disabled+label {
 	margin-bottom: 31px;
 }
 
-
 .price-btn {
 	padding: 16px 62px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .pagination-list {
-	margin: 0;
+	display: flex;
+	margin: 60px 0;
 	padding: 0;
 	list-style: none;
 }
 
 .pagination-list .btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	
+	margin-right: 11px;
 	color: #000;
 	
 	background-color: #eee;
 }
 
-.pagination-list .btn:hover,
-.pagination-list .btn:focus {
+.pagination-list .next-page {
+	width: 260px;
+}
+
+.pagination-list .btn:not(.current-page):hover,
+.pagination-list .btn:not(.current-page):focus {
 	background-color: #dfdfdf;
 }
 
-.pagination-list .btn:active {
+.pagination-list .btn:not(.current-page):active {
 	color: rgba(0,0,0,0.3);
 	
 	background-color: #d5d5d5;
+}
+
+.pagination-list .current-page {
+	background-color: #fff;
+	box-shadow: inset 0 0 0 3px #d5d5d5;
 }
 
 /******************************Карта**********************************/
