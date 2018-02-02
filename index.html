@@ -8,6 +8,9 @@
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
+		<input class="invisible" type="radio" name="toggle" id="product-1" checked>
+		<input class="invisible" type="radio" name="toggle" id="product-2">
+		<input class="invisible" type="radio" name="toggle" id="product-3">
 		<header class="main-header">
 			<nav class="main-nav">
 				<a class="main-header-logo"><img src="img/logo.svg" width="160" height="65" alt=""></a>
@@ -23,30 +26,36 @@
 			</nav>
 		</header>
 		<main class="container">
-			<div class="main-wrapper">
-				<h1 class="invisible">Дизайн студия Нёрдс</h1>
-				<section class="slider">
-		<!--
+			<h1 class="invisible">Дизайн студия Нёрдс</h1>
+			<section class="slider">
+				<div class="main-wrapper">
 					<h2 class="invisible">Преимущества</h2>
+					
+					<div class="slider-controls">
+						<label for="product-1" class="slider-controls-item-1">Первый</label>
+						<label for="product-2" class="slider-controls-item-2">Второй</label>
+						<label for="product-3" class="slider-controls-item-3">Третий</label>
+					</div>
 					<ul class="slider-list">
-						<li>
+						<li class="slider-item">
 							<h3>Долго, дорого, скрупулезно</h3>
-							<p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
+							<p>Математически выверенный дизайн <br> для вашего сайта или мобильного приложения.</p>
 							<a class="btn slider-btn">Узнать больше</a>
 						</li>
-						<li>
+						<li class="slider-item">
 							<h3>Любим математику как никто другой</h3>
 							<p>Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
 							<a class="btn slider-btn">Узнать больше</a>
 						</li>
-						<li>
+						<li class="slider-item">
 							<h3>Только ночь, только хардкор</h3>
-							<p>Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
+							<p>Работать днем, как все? Мы против этого.<br>Ближе к полуночи работа только начинается.</p>
 							<a class="btn slider-btn">Узнать больше</a>
 						</li>
 					</ul>
-		-->
-				</section>
+				</div>
+			</section>
+			<div class="main-wrapper">
 				<section class="services">
 					<h2 class="invisible">Наши услуги</h2>
 					<ul class="service-list">
@@ -98,7 +107,6 @@
 						</table>
 					</div>
 				</section>
-
 				<section class="clients">
 					<h2 class="invisible">Наши клиенты</h2>
 					<ul class="client-list">
@@ -118,6 +126,27 @@
 						<span>тел. +7 (812) 275-75-75</span>
 						<a class="btn modal-btn" href="write-us">Напишите нам</a>
 					</div>
+				</div>
+				
+				
+				<div class="modal">
+					<h2>Напишите нам</h2>
+					<button class="modal-close" type="button">Закрыть</button>
+					<form class="modal-form" method="post" action="https://echo.htmlacademy.ru">
+						<p class="half-row">
+							<label for="user-name-field">Ваше имя:</label>
+							<input type="text" name="user-name" id="user-name-field" placeholder="Представьтесь, пожалуйста">
+						</p>
+						<p class="half-row">
+							<label for="user-email-field">Ваш e-mail:</label>
+							<input type="text" name="user-email" id="user-email-field" placeholder="Для отправки ответа">
+						</p>
+						<p class="full-row">
+							<label for="user-letter-field">Текст письма:</label>
+							<textarea name="user-letter" id="user-letter-field" placeholder="В свободной форме"></textarea>
+						</p>
+						<button class="btn form-btn" type="submit">Отправить</button>
+					</form>
 				</div>
 			</section>
 		</main>
@@ -147,5 +176,19 @@
 				<p>Скидка 10% для друзей из социальных сетей.</p>
 			</div>
 		</footer>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	</body>
 </html>

@@ -28,6 +28,7 @@ a {
 	
 	background-color: #fb565a;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .btn:hover,
@@ -164,7 +165,7 @@ input[type="radio"].invisible,
 	opacity: 1;
 }
 
-/****************************Слайдер - Преимущества*********************/
+/****************************Центровщик*********************/
 .main-wrapper {
 	width: 1200px;
 	margin: 0 auto;
@@ -172,24 +173,134 @@ input[type="radio"].invisible,
 	box-sizing: border-box;
 }
 
+/****************************Слайдер - Преимущества*********************/
+
 .slider {
-	background-color: #eee;
+	position: relative;
 	
-	height: 413px; /* временно */
+	margin: 0;
+	
+	background-color: #eee;	
 }
 
 .slider-list {
+	margin: 0;
+	padding: 0;
+	
 	list-style: none;
 }
 
-.slider-list h3 {
+.slider-controls {
+	position: absolute;
+	left: 50%;
+	bottom: 86px;
+	z-index: 100;
+	
+	transform: translateX(-50%);
+	text-align: center;
+	font-size: 0;
+}
+
+.slider-controls label{
+	position: relative;
+	display: inline-block;
+	
+	width: 18px;
+	height: 18px;
+	padding: 8px;
+	
+	border-radius: 50%;
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.slider-controls label::after {
+	content: "";
+	position: absolute;
+	
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	
+	width: 18px;
+	height: 18px;
+	
+	background-color: #fff;	
+	border-radius: 50%;
+}
+
+.slider-item {
+	display: none;
+	
+	padding-top: 60px;
+}
+
+.slider-item:nth-child(1) {
+	background-image: url("../img/slide1.png");
+	background-repeat: no-repeat;
+	background-position: 93% 0;
+}
+
+.slider-item:nth-child(2) {
+	background-image: url("../img/slide2.png");
+	background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+
+.slider-item:nth-child(3) {
+	background-image: url("../img/slide3.png");
+	background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+
+.slider-item h3 {
+	width: 520px;
+	
+	margin: 0;
 	font-size: 55px;
 	line-height: 55px;
 	font-weight: 500;
 	color: #000;
 }
 
+.slider-item p {
+	width: 430px;
+	
+	margin: 25px 0 40px;
+}
+
+.slider-btn {
+	padding: 16px 55px;
+	margin-bottom: 80px;
+}
+
+#product-1:checked ~ .container .slider-item:nth-child(1),
+#product-2:checked ~ .container .slider-item:nth-child(2),
+#product-3:checked ~ .container .slider-item:nth-child(3) {
+  display: block;
+}
+
+#product-1:checked ~ .container .slider-controls-item-1::before,
+#product-2:checked ~ .container .slider-controls-item-2::before,
+#product-3:checked ~ .container .slider-controls-item-3::before {
+	content: "";
+	position: absolute;
+	z-index: 2;
+	
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	
+	width: 4px;
+	height: 4px;
+	
+	border-radius: 50%;
+	border: 2px solid #c1c1c1;
+	background-color: #fff;
+}
+
 /****************************************Наши услуги************************/
+
 .services {
 	padding: 80px 0 0;
 	margin-bottom: 38px;
@@ -439,10 +550,11 @@ input[type="radio"].invisible,
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	
-	padding-top: 55px;
 }
 
+.catalog-wrapper {
+	padding-top: 55px;
+}
 /******************************Каталог-Фильтры**********************************/
 
 .filter {
@@ -1022,3 +1134,62 @@ input[type="checkbox"]:disabled+label {
 	font-weight: 700;
 }
 
+/*****************************Форма обратной связи****************/
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	
+	transform: translate(-50%,-50%);
+	z-index: 100;
+	width: 960px;
+	
+	padding: 68px 98px 85px;
+	box-sizing: border-box;
+	
+	background-color: #fff;
+	box-shadow: 0 20px 40px rgba(0,1,1,0.75);
+}
+
+.modal h2 {
+	margin: 0;
+	margin-bottom: 40px;
+	
+	font-size: 45px;
+	line-height: 45px;
+	font-weight: 500;
+}
+
+.modal-close {
+	position: absolute;
+	
+	top: 78px;
+	right: 89px;
+	
+	width: 21px;
+	height: 21px;
+	
+	font-size: 0;
+	
+	border: none;
+	background-image: url("../img/close-cross.svg");
+	background-repeat: no-repeat;
+	background-color: transparent;
+	opacity: 0.3;
+	cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+	opacity: 1;
+}
+
+.modal-close:active {
+	opacity: 0.1;
+}
+
+.modal-form label {
+	line-height: 18px;
+	font-weight: 700;
+}
