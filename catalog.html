@@ -179,6 +179,25 @@
 						<a class="btn modal-btn" href="write-us">Напишите нам</a>
 					</div>
 				</div>
+				<div class="modal">
+					<h2>Напишите нам</h2>
+					<button class="modal-close" type="button">Закрыть</button>
+					<form class="modal-form" method="post" action="https://echo.htmlacademy.ru">
+						<p class="half-row">
+							<label for="user-name-field">Ваше имя:</label>
+							<input type="text" name="user-name" id="user-name-field" placeholder="Представьтесь, пожалуйста" required>
+						</p>
+						<p class="half-row">
+							<label for="user-email-field">Ваш e-mail:</label>
+							<input type="text" name="user-email" id="user-email-field" placeholder="Для отправки ответа" required>
+						</p>
+						<p class="full-row">
+							<label for="user-letter-field">Текст письма:</label>
+							<textarea name="user-letter" id="user-letter-field" placeholder="В свободной форме" required></textarea>
+						</p>
+						<button class="btn form-btn" type="submit">Отправить</button>
+					</form>
+				</div>
 			</section>
 		</main>
 		<footer class="main-footer">
