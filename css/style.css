@@ -72,35 +72,34 @@ input[type="radio"].invisible,
 /***********************************Футер**********************/
 
 .main-header {
-	margin: 0;
-	
 	background-color: #eee;
 }
 
 .main-nav {
 	display: flex;
 	justify-content: space-between;
-	
+	min-height: 132px;
+
 	width: 1200px;
-	min-height: 132px; /*	УБРАТЬ **********/
 	box-sizing: border-box;
 
 	margin: 0 auto;
 	padding: 0 20px;
 	
 	line-height: 30px;	
+	background-color: #eee;
 }
 
 .main-header-logo {
 	padding: 49px 0 0;
 }
 
-.main-header-logo:hover,
-.main-header-logo:focus {
+.inner-page .main-header-logo:hover,
+.inner-page .main-header-logo:focus {
 	opacity: 0.8;
 }
 
-.main-header-logo:active {
+.inner-page .main-header-logo:active {
 	opacity: 0.3;
 }
 
@@ -322,6 +321,8 @@ input[type="radio"].invisible,
 .sevice-item {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
+
 	
 	min-height: 428px;
 	width: 300px;
@@ -349,9 +350,12 @@ input[type="radio"].invisible,
 	order: -1;
 }
 .service-list p {
+	width: 100%;
+	
 	margin: 0;
 	padding-right: 50px;
 	padding-bottom: 32px;
+	box-sizing: border-box;
 }
 
 .service-btn {
@@ -1005,13 +1009,27 @@ input[type="checkbox"]:disabled+label {
 .map {
 	position: relative;
 	
+	width: 100%;
 	padding: 53px 0;
+	box-sizing: border-box;
 	
 	background-color: #eee;
+/*
 	background-image: url("../img/map.jpg");
 	background-position: 0 0;
 	background-repeat: no-repeat;
+*/
 	background-size: cover;
+}
+
+.map iframe {
+	position: absolute;
+	width: 100%;
+	min-height: 416px;
+	
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 .map::after {
@@ -1026,10 +1044,11 @@ input[type="checkbox"]:disabled+label {
 	
 	width: 367px;
 	height: 190px;
-		
 }
 
 .address-box {
+	position: relative;
+	
 	background-color: #fff;
 	width: 320px;
 	min-height: 300px;
@@ -1038,6 +1057,7 @@ input[type="checkbox"]:disabled+label {
 	padding: 50px;
 	
 	line-height: 18px;
+	z-index: 100;
 }
 
 .address-box h3 {
